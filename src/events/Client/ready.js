@@ -14,6 +14,8 @@ run: async (client) => {
 // premium system loader
   const users = await User.find();
   users.forEach((user) => client.userSettings.set(user.Id, user));
+
+  client.user.setStatus("dnd");
   
     //Game
     let statuses = ['Dakku - Aerial Cloudy','Dakku - Alba','Dakku - Euphoria','Dakku - Lost in Paradise','Dakku - Rest','Dakku - Candy','Dakku - Abstract','Dakku - You and Me','Dakku - Aiko','Dakku - Galaxy','Dakku - Sweetness','Dakku - Starlight','Dakku - Lost','Dakku - Ather','Dakku - Hysteria','seld, TriangleReality - Kokkabiel (Dakku Remix)','Dakku - Anyway','Dakku - Stay','Dakku - Incandescent','Dakku - Healing','Dakku - Apotheosic','Dakku - Ephemeral'];
