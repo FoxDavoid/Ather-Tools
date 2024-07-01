@@ -23,49 +23,49 @@ module.exports = {
         let data = await db3.findOne({ Guild: message.guildId });
         if (data && data.Channel && message.channelId === data.Channel) return client.emit("setupSystem", message);
 
-//         const mention = new RegExp(`^<@!?${client.user.id}>( |)$`);
-//         if (message.content.match(mention)) {
-//             const embed = new EmbedBuilder()
-//                 .setAuthor({name:` ${message.guild.name}`,
-//       iconURL: message.guild.iconURL()})
-//       .setThumbnail(client.user.displayAvatarURL())
-//                 .setColor(client.embedColor)
-//                 .setFooter({ text: `Requested by ` + message.author.username , iconURL: message.author.displayAvatarURL({ dynamic: true})})
-//     .setTitle("**__Yeah, I'm Ather__**")
-//     .setDescription(`What the f u want?`)
-//     .addFields([
-//             { name: '**__Do not ping me again, ever__**', value: `<a:x_dot:1241064280124817529> Browse my commands by using \`${prefix}help\`
-// <a:x_dot:1241064280124817529> Join [Dakku's server](https://discord.com/invite/4t2r9WB6qZ)`, inline: true },
+        const mention = new RegExp(`^<@!?${client.user.id}>( |)$`);
+        if (message.content.match(mention)) {
+            const embed = new EmbedBuilder()
+                .setAuthor({name:` ${message.guild.name}`,
+      iconURL: message.guild.iconURL()})
+      .setThumbnail(client.user.displayAvatarURL())
+                .setColor(client.embedColor)
+                .setFooter({ text: `Requested by ` + message.author.username , iconURL: message.author.displayAvatarURL({ dynamic: true})})
+    .setTitle("**__Yeah, I'm Ather__**")
+    .setDescription(`What the f u want?`)
+    .addFields([
+            { name: '**__Do not ping me again, ever__**', value: `<a:x_dot:1241064280124817529> Browse my commands by using \`${prefix}help\`
+<a:x_dot:1241064280124817529> Join [Dakku's server](https://discord.com/invite/4t2r9WB6qZ)`, inline: true },
           
-//       ]);
+      ]);
       
-//           const row = new ActionRowBuilder()
-//       .addComponents(
-//         new ButtonBuilder()
-//           .setLabel("Add me")
-//           .setEmoji('1056925359750262824')
-//           .setStyle(ButtonStyle.Link)
-//           .setURL(`https://discord.com/api/oauth2/authorize?client_id=${client.user.id}&permissions=8&scope=bot`),
+          const row = new ActionRowBuilder()
+      .addComponents(
+        new ButtonBuilder()
+          .setLabel("Add me")
+          .setEmoji('1056925359750262824')
+          .setStyle(ButtonStyle.Link)
+          .setURL(`https://discord.com/api/oauth2/authorize?client_id=${client.user.id}&permissions=8&scope=bot`),
         
-//         new ButtonBuilder()
-//           .setLabel("Support")
-//           .setStyle(ButtonStyle.Link)
-//           .setEmoji('1056925477849284608')
-//           .setURL("https://discord.com/invite/4t2r9WB6qZ"),
-//       );
+        new ButtonBuilder()
+          .setLabel("Support")
+          .setStyle(ButtonStyle.Link)
+          .setEmoji('1056925477849284608')
+          .setURL("https://discord.com/invite/4t2r9WB6qZ"),
+      );
                 
              
-//             message.channel.send({ embeds: [embed] , components : [row]})
-//         };
-//         let np = [];
-//             let npData = await db4.findOne({userId: message.author.id,noprefix: true});
-//           if(npData) np.push(message.author.id);
+            message.channel.send({ embeds: [embed] , components : [row]})
+        };
+        let np = [];
+            let npData = await db4.findOne({userId: message.author.id,noprefix: true});
+          if(npData) np.push(message.author.id);
 
-//           let regex = new RegExp(`^<@!?${client.user.id}>`);
-//           let pre = message.content.match(regex) ? message.content.match(regex)[0] : prefix;
-//           if(!np.includes(message.author.id)){
-//             if(!message.content.startsWith(pre)) return;
-//           }
+          let regex = new RegExp(`^<@!?${client.user.id}>`);
+          let pre = message.content.match(regex) ? message.content.match(regex)[0] : prefix;
+          if(!np.includes(message.author.id)){
+            if(!message.content.startsWith(pre)) return;
+          }
 
           const args = np.includes(message.author.id) === false ? message.content.slice(pre.length).trim().split(/ +/) : message.content.startsWith(pre) === true ? message.content.slice(pre.length).trim().split(/ +/) : message.content.trim().split(/ +/);
             const commandName = args.shift().toLowerCase();
