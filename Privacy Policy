@@ -1,0 +1,18 @@
+Privacy Policy
+
+Usage of Data
+The bot may use stored data, as defined below, for different features including but not limited to:
+Command handling
+Providing server and user preferences
+
+Updating Data
+The bot's data may be updated when using specific commands.
+Updating data can require the input of an end user, and data that can be seen as sensitive, such as content of a message, may need to be stored when using certain commands.
+
+Temporarily Stored Data
+The bot may keep stored data in an internal caching mechanic for a certain amount of time. After this time period, the cached information will be dropped and only be re-added when required.
+Data may be dropped from cache pre-maturely through actions such as removing the bot from the server.
+
+Removal of Data
+Manual removal of the data can be requested through the official support server. Discord IDs such as user, guild, role, etc. may be stored even after the removal of other data in order to properly identify bot specific statistics since those IDs are public and non-sensitive.
+For security reasons we will ask you to provide us with proof of ownership to the data you wish to be removed. Only a server owner may request manual removal of server data.
